@@ -1,0 +1,10 @@
+<ul>
+                {data.map((item, index) => (
+                  <li key={index}>
+                    {item.day}
+                    <div className='bar1' style={{ height: `${item.amount}px` }}>
+                      {/* Content or styling for the bar */}
+                    </div>
+                  </li>
+                ))}
+              </ul>
