@@ -40,31 +40,52 @@ function App() {
             </div>
           </div>
         </div>
-          {/* <div>
-
-              </div> */}
-          {/* </div> */}
+         
           {/* Bottom */}
         <div className = 'bottom'> 
           <h5>Spending- Last 7 days</h5>
           <div className = "chart">
 
             <div className='day'>
-              {/* <ul>
-                <li>data[0].day <div className='bar1' style={height = data[0].amount}>   </div></li>
-                <li>data[1].day <div className='bar1' style={height = data[1].amount}>   </div></li>
-                <li>data[2].day <div className='bar1' style={height = data[2].amount}>   </div></li>
-                <li>data[3].day <div className='bar1' style={height = data[3].amount}>   </div></li>
-                <li>data[4].day <div className='bar1' style={height = data[4].amount}>   </div></li>
-                <li>data[5].day <div className='bar1' style={height = data[5].amount}>   </div></li>
-                <li>data[6].day <div className='bar1' style={height = data[6].amount}>   </div></li>
-                
-              </ul> */}
 
-              
+              <div className='dayBlock'>
+                <p className='price'>$300</p>
+                <div className = 'bar'></div>
+                <p>Monday</p>
+              </div>
+              <div className='dayBlock'>
+                <p className='price'>300</p>
+                <div className = 'bar'></div>
+                <p>Tuesday</p>
+              </div>
+              <div className='dayBlock'>
+                <p className='price'>$300</p>
+                <div className = 'bar'></div>
+                <p>Wednesday</p>
+              </div>
+              <div className='dayBlock'>
+                <p className='price'>$300</p>
+                <div className = 'bar'></div>
+                <p>Thursday</p>
+              </div>
+              <div className='dayBlock'>
+                <p className='price'>$300</p>
+                <div className = 'bar'></div>
+                <p>Friday</p>
+              </div>
+              <div className='dayBlock'>
+                <p className='price'>$300</p>
+                <div className = 'bar'></div>
+                <p>Saturday</p>
+              </div>
+              <div className='dayBlock'>
+                <p className='price'>$300</p>
+                <div className = 'bar'></div>
+                <p>Sunday</p>
+              </div>
 
             </div>
-            
+
           </div>
 
           <div className = 'border'></div>
