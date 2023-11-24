@@ -29,9 +29,9 @@ function App() {
         <div className= 'top'>
           <div className='info'>
             <div className='heading'>
-              <h6 className='headingH6'>My Balance</h6>
-              <h1 className='headingH6'>$1000</h1>
-              {/* <h5>{Balance}</h5> */}
+              <h6 className='headingH6 color'>My Balance</h6>
+              <h1 className='headingH6 color'>$1000</h1>
+            
             </div>
             <div className='img'>
               <img src = {logo} alt= "circle"/>
