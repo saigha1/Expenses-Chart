@@ -13,16 +13,14 @@ function App() {
       setData(jsonData)
     }, []);
 
-
-    useEffect(() => {
-      for (const key in data) {
-        if (Object.hasOwnProperty.call(data, key)) {
-          const value = data[key];
-          console.log(`Key: ${key}, Value: ${value}`);
-          // You can perform any operations with each key-value pair here
-        }
+    const totalAmount = () => {
+      let total = 0
+      for (const obj of jsonData) {
+        total += obj.amount 
       }
-    }, [data]);
+      return total
+    }
+
 
   return (
     <div className="App">
@@ -32,7 +30,7 @@ function App() {
           <div className='info'>
             <div className='heading'>
               <h6 className='headingH6'>My Balance</h6>
-              <h6 className='headingH6'>fdfd</h6>
+              <h1 className='headingH6'>$1000</h1>
               {/* <h5>{Balance}</h5> */}
             </div>
             <div className='img'>
@@ -43,47 +41,17 @@ function App() {
          
           {/* Bottom */}
         <div className = 'bottom'> 
-          <h5>Spending- Last 7 days</h5>
+          <h1>Spending- Last 7 days</h1>
           <div className = "chart">
 
             <div className='day'>
-
-              <div className='dayBlock'>
-                <p className='price'>$300</p>
-                <div className = 'bar'></div>
-                <p>Monday</p>
-              </div>
-              <div className='dayBlock'>
-                <p className='price'>300</p>
-                <div className = 'bar'></div>
-                <p>Tuesday</p>
-              </div>
-              <div className='dayBlock'>
-                <p className='price'>$300</p>
-                <div className = 'bar'></div>
-                <p>Wednesday</p>
-              </div>
-              <div className='dayBlock'>
-                <p className='price'>$300</p>
-                <div className = 'bar'></div>
-                <p>Thursday</p>
-              </div>
-              <div className='dayBlock'>
-                <p className='price'>$300</p>
-                <div className = 'bar'></div>
-                <p>Friday</p>
-              </div>
-              <div className='dayBlock'>
-                <p className='price'>$300</p>
-                <div className = 'bar'></div>
-                <p>Saturday</p>
-              </div>
-              <div className='dayBlock'>
-                <p className='price'>$300</p>
-                <div className = 'bar'></div>
-                <p>Sunday</p>
-              </div>
-
+              {data.map((item, index) => (
+                <div className='dayBlock' key={index}>
+                  <p >{item.day}</p>
+                  <div className='bar' style={{ height: `${item.amount * 2.5}px`, width: '40px' }}></div>
+                  <p className='price'>${`${item.amount}`}</p>
+                </div>
+              ))}
             </div>
 
           </div>
@@ -92,16 +60,14 @@ function App() {
 
           <div className='totalInfo'>
             <div>
-              <h6 className='headingH6'>Total this month</h6>
-              <h1 className='headingH6'>$1000</h1>
+              <h6 className='headingH6 totalMonth'>Total this month</h6>
+              <h1 className='headingH6'>${totalAmount()}</h1>
             </div>
             <div className = "stats">
-              <h6 className='headingH6'>+-9.8%</h6>
-              <h6 className='headingH6'>from last month</h6>
+              <h6 className='headingH7'>+2.4%</h6>
+              <h6 className='headingH7 fromLastMonth'>from last month</h6>
             </div>
           </div>
-
-
 
         </div>
       </div>
